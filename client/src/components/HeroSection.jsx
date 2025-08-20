@@ -1,9 +1,13 @@
 import React from 'react'
 import { assets } from '../assets/assets'
 import { Calendar } from 'lucide-react'
-import { CalendarIcon,ClockIcon } from 'lucide-react'
+import { CalendarIcon,ClockIcon,ArrowRight } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const HeroSection = () => {
+    
+    const navigate = useNavigate()
+
   return (
     <div className='flex flex-col items-start justify-center gap-4 px-6 md:px-16 lg:px-36 bg-[url(/backgroundImage.png)] bg-cover bg-center h-screen'>
         <img src={assets.marvelLogo} className='max-h-11 lg:h-11 mt-20' ></img>
@@ -17,7 +21,11 @@ const HeroSection = () => {
             <ClockIcon className='w-4.5 h-4.5'/> 2h 8m
         </div>
         </div>
-        
+        <p className = "max-w-md text-gray-300"> Peter Quill, a petty thief, accidentally steals a mysterious orb and becomes the target of a powerful villain, Ronan. To save the universe, Quill is forced to team up with an unlikely group of criminals: Gamora, Drax the Destroyer, Rocket Raccoon and Groot. </p>
+        <button onClick={() => navigate('/movies')} className = 'flex  justify-center gap-1 px-6 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer'>
+            Explore Movies
+            <ArrowRight className = "w-5 h-5"></ArrowRight>
+        </button>
     </div>
   )
 }
