@@ -17,7 +17,7 @@ export const assets = {
 export const dummyTrailers = [
     {
         image: "https://img.youtube.com/vi/WpW36ldAqnM/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=WpW36ldAqnM'
+        videoUrl: "https://www.youtube.com/watch?v=WpW36ldAqnM"
     },
     {
         image: "https://img.youtube.com/vi/-sAOWhvheK8/maxresdefault.jpg",
@@ -193,7 +193,27 @@ export const dummyShowsData = [
         "vote_average": 7.443,
         "vote_count": 23569,
         "runtime": 127,
-    }
+    },
+    {
+        "_id": "552524",
+        "id": 552524,
+        "title": "Lilo & Stitch",
+        "overview": "The wildly funny and touching story of a lonely Hawaiian girl and the fugitive alien who helps to mend her broken family.",
+        "poster_path": "https://image.tmdb.org/t/p/original/mKKqV23MQ0uakJS8OCE2TfV5jNS.jpg",
+        "backdrop_path": "https://image.tmdb.org/t/p/original/7Zx3wDG5bBtcfk8lcnCWDOLM4Y4.jpg",
+        "genres": [
+            { "id": 10751, "name": "Family" },
+            { "id": 35, "name": "Comedy" },
+            { "id": 878, "name": "Science Fiction" }
+        ],
+        "casts": dummyCastsData,
+        "release_date": "2025-05-17",
+        "original_language": "en",
+        "tagline": "Hold on to your coconuts.",
+        "vote_average": 7.117,
+        "vote_count": 27500,
+        "runtime": 108,
+    },
 ]
 
 export const dummyDateTimeData = {
