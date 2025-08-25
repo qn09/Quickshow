@@ -34,9 +34,9 @@ const SeatLayout = () => {
       if(!selectedSeats.includes(seatId) && selectedSeats.length > 4) {
         return(toast('You can select maximum 5 seats'))
     }
-    setSelectedSeats((prev) => {
+    setSelectedSeats((prev) => 
       prev.includes(seatId) ? prev.filter((seat) => seat !== seatId) : [...prev, seatId]
-    })
+    )
   }
     const renderSeats = (row, count = 9) => {
   return (
@@ -69,7 +69,7 @@ const SeatLayout = () => {
                 <p className='text-lg font-semibold px-6'> Available Time</p>
                 <div className='mt-5 space-y-1'>
                     {show.dateTime[date].map((item) => (
-                        <div key={item.time} className={`flex items-center gap-2 px-4 py-2 w-max rounded cursor-pointer transition ${selectedTime?.time ===  item.time ? 'bg-primary text-white' : 'hover:bg-primary/20'}`}>
+                        <div key={item.time} onClick = {() => setSelectedTime(item)} className={`flex items-center gap-2 px-4 py-2 w-max rounded cursor-pointer transition ${selectedTime?.time ===  item.time ? 'bg-primary text-white' : 'hover:bg-primary/20'}`}>
                             <ClockIcon className="w-4 h-4"/>
                             <p className='text-sm'>{isoTimeFormat (item.time)}</p>
                         </div>
@@ -87,7 +87,18 @@ const SeatLayout = () => {
                       <div className='grid grid-cols-2 md:grid-cols-1 gap-8 md:gap-2 mb-6'>
                         {groupsRows[0].map(row => renderSeats(row))}
                       </div>
+                       <div className = 'grid grid-cols-2 gap-8 mb-6'>
+                      {groupsRows.slice(1).map((group,index) =>(
+                        <div key = {index}>
+                          {group.map(row => renderSeats(row))}
+                        </div>
+                      ))}
+                      </div>
                     </div>
+                    <button onClick = {() => navigate('/my-bookings')} className='flex items-center gap-1 mt-20 px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer active:scale-95'>
+                      Process to checkout
+                    </button>
+                   
             </div>
         </div>
 
